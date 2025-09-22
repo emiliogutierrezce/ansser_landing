@@ -1,1 +1,52 @@
+.faq-section {
+  padding-bottom: 127px;
+}
 
+.faq-main-title {
+  margin-bottom: 58px;
+}
+
+.faq-list {
+  max-width: 1002px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none; /* Remove default marker */
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none; /* For Chrome */
+}
+
+.faq-arrow {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  padding: 0px 10px 20px;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.faq-list hr {
+  border: none;
+  border-top: 1px solid var(--color-border-dark);
+  margin: 10px 0;
+}
