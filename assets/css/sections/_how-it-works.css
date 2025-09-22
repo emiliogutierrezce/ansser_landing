@@ -1,0 +1,76 @@
+.how-it-works-section {
+  padding-bottom: 147px;
+}
+
+.steps-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 67px;
+  max-width: 700px;
+  /* Eliminamos el 'margin-right' para un mejor control */
+  margin-left: auto;
+  margin-right: auto; /* Centrado por defecto, ajustar si hay imagen al lado */
+}
+
+/* Línea de tiempo vertical */
+.steps-container::before {
+  content: '';
+  position: absolute;
+  left: 41px; /* (83px width of circle / 2) */
+  top: 41px;
+  bottom: 41px;
+  width: 4px;
+  background-color: var(--color-primary);
+  z-index: -1;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 49px;
+}
+
+.step-number {
+  position: relative;
+  width: 83px;
+  height: 83px;
+  flex-shrink: 0;
+}
+
+.step-number span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-background);
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.step-content h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  margin-bottom: 10px;
+}
+
+.step-content p {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .step {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+  }
+  /* Ocultamos la línea en móvil */
+  .steps-container::before {
+      display: none;
+  }
+}
