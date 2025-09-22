@@ -1,1 +1,111 @@
+.plans-section {
+  padding-bottom: 158px;
+}
 
+.plans-container {
+  display: flex;
+  justify-content: center;
+  gap: 62px;
+  align-items: flex-start; /* Alinea las tarjetas en la parte superior */
+}
+
+.plan-card {
+  background-color: var(--color-surface-dark);
+  border: 1px solid var(--color-border);
+  border-radius: 15px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.plan-card.pro {
+  border-color: var(--color-primary-dark);
+}
+
+.plan-title {
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.plan-price {
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.price-amount {
+  font-size: 30px;
+}
+
+.plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.plan-features li img {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  margin-top: -2px; /* Ajuste visual fino */
+}
+
+.feature-bold {
+  font-weight: 700;
+}
+
+.plan-cta {
+  background-color: #1a1a1a;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 400;
+  margin-top: auto; /* Empuja el botón hacia abajo */
+  align-self: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.plan-cta:hover {
+  background-color: #333;
+}
+
+.pro-cta {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-text-primary);
+}
+.pro-cta:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+
+@media (max-width: 1300px) {
+  .plans-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+  }
+  .plan-card {
+      width: 100%;
+      max-width: 450px;
+  }
+}
