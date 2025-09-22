@@ -1,1 +1,62 @@
+.problem-section {
+  padding-bottom: 255px;
+}
 
+.problem-title {
+  color: var(--color-text-secondary);
+  margin-bottom: 97px;
+}
+
+.problem-cards {
+  display: flex;
+  justify-content: center;
+  gap: 118px;
+}
+
+.problem-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-header img {
+  width: 24px;
+  height: 24px;
+}
+
+.card-header h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+.problem-card p {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  padding-left: 34px; /* Align with title */
+}
+
+@media (max-width: 1024px) {
+  .problem-cards {
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+  }
+  .problem-card {
+      text-align: center;
+  }
+  .card-header {
+      justify-content: center;
+  }
+  .problem-card p {
+      padding-left: 0;
+  }
+}
