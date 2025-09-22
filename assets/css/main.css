@@ -1,1 +1,24 @@
+/* ====================================================
+   MAIN STYLESHEET
+   Este archivo importa todos los demás módulos de CSS.
+   No edites directamente aquí, edita los archivos
+   en las carpetas 'base' y 'sections'.
+   ==================================================== */
 
+/* ===== BASE STYLES ===== */
+@import 'base/_reset.css';
+@import 'base/_variables.css';
+@import 'base/_global.css';
+
+/* ===== SECTION STYLES ===== */
+@import 'sections/_header.css';
+@import 'sections/_hero.css';
+@import 'sections/_problem.css';
+@import 'sections/_solution.css';
+/* @import 'sections/_features.css'; */ /* Descomentar si se usa la sección features */
+@import 'sections/_how-it-works.css';
+@import 'sections/_stats.css';
+@import 'sections/_plans.css';
+@import 'sections/_faq.css';
+@import 'sections/_cta.css';
+@import 'sections/_footer.css';
