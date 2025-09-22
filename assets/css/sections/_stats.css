@@ -1,0 +1,40 @@
+.stats-section {
+  padding-bottom: 202px;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 175px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.stat-number {
+  font-size: 45px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+.stat-label {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+      flex-direction: column;
+      gap: 50px;
+  }
+  .stat-number {
+      font-size: 36px;
+  }
+}
