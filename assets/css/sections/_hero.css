@@ -4,44 +4,41 @@
 }
 
 .hero-title {
-  color: var(--color-text-primary);
-  font-size: 60px; /* Tamaño de H1 reducido drásticamente */
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 16px;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-h1); /* Usamos la variable fluida que definimos */
+    font-weight: 700;
+    line-height: 1.1; /* Un poco más apretado para impacto */
+    margin-bottom: var(--space-m); /* Usamos variables de espacio */
+    max-width: 900px;
+    text-wrap: balance; /* Magia para el balanceo de texto */
 }
 
-.hero-subtitle {
-  color: var(--color-text-accent);
-  font-size: 24px; /* Subtítulo mucho más pequeño para mayor contraste */
-  font-weight: 400; /* Peso reducido para no competir con el H1 */
-  line-height: 1.5;
-  text-shadow: none; /* Quitamos sombra para mayor legibilidad */
-  margin: 0 auto 48px;
-  max-width: 650px; /* Limitamos el ancho del subtítulo */
+.hero-subtitle span {
+    font-size: clamp(1.25rem, 3vw, 1.5rem); /* ~20px a 24px, más grande */
+    font-weight: 400;
+    line-height: 1.5;
+
+    /* Efecto de gradiente en el texto para el toque "IA" */
+    background: linear-gradient(90deg, var(--color-text-accent), var(--color-primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    /* Mantenemos el sutil brillo */
+    animation: subtle-glow 4s ease-in-out infinite;
 }
 
-.hero-cta {
-  margin-bottom: 48px;
+.secondary-cta-button {
+  /* ... (estilos existentes) ... */
+  transition: all 0.3s ease;
 }
 
-.integrations-pills {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px; /* Espacio entre pills reducido */
-  flex-wrap: wrap;
-}
-
-.pill {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid #4A4A4A; /* Borde más sutil */
-  border-radius: 40px;
-  padding: 8px 16px; /* Padding reducido */
-  font-size: 14px; /* Tamaño de fuente reducido */
-  font-weight: 500;
+.secondary-cta-button:hover {
+  border-color: var(--color-primary-light);
+  background-color: rgba(139, 92, 246, 0.1); /* Relleno sutil al pasar el cursor */
+  transform: translateY(-3px); /* También se levanta */
+  color: var(--color-text-primary); /* Aseguramos que el texto siga siendo brillante */
 }
 
 @media (max-width: 768px) {
