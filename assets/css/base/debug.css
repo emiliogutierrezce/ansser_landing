@@ -177,10 +177,11 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   position: relative;
   overflow: hidden;
   background-image:
-    linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 0%, rgba(139, 92, 246, 0) 50%, rgba(139, 92, 246, 0) 100%), /* Degradado de luz */
-    url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23FFFFFF" fill-opacity="0.03" fill-rule="evenodd"%3E%3Cpath d="M0 40V0h.5v40H0zm.5 0h40v-.5H.5V40z"/%3E%3C/g%3E%3C/svg%3E');
-  background-size: cover, 40px 40px; /* Cubre el degradado, tamaño fijo para el grid */
+    radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.1) 0%, transparent 60%), /* Luz central superior */
+    url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23FFFFFF" fill-opacity="0.02" fill-rule="evenodd"%3E%3Cpath d="M0 40V0h.5v40H0zm.5 0h40v-.5H.5V40z"/%3E%3C/g%3E%3C/svg%3E'); /* Grid muy sutil */
+  background-size: cover, 40px 40px; /* Cubre el degradado radial, tamaño fijo para el grid */
   background-repeat: no-repeat, repeat; /* Degradado no se repite, grid sí */
+  background-position: center top; /* Asegura que la luz esté centrada arriba */
 }
 .problem-title {
   color: var(--color-text-secondary);
@@ -217,10 +218,11 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   position: relative;
   overflow: hidden;
   background-image:
-    linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 0%, rgba(139, 92, 246, 0) 50%, rgba(139, 92, 246, 0) 100%), /* Degradado de luz */
-    url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23FFFFFF" fill-opacity="0.03" fill-rule="evenodd"%3E%3Cpath d="M0 40V0h.5v40H0zm.5 0h40v-.5H.5V40z"/%3E%3C/g%3E%3C/svg%3E');
-  background-size: cover, 40px 40px; /* Cubre el degradado, tamaño fijo para el grid */
-  background-repeat: no-repeat, repeat; /* Degradado no se repite, grid sí */
+    radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.05) 0%, transparent 60%), /* Luz central superior (más tenue) */
+    url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23FFFFFF" fill-opacity="0.01" fill-rule="evenodd"%3E%3Cpath d="M0 40V0h.5v40H0zm.5 0h40v-.5H.5V40z"/%3E%3C/g%3E%3C/svg%3E'); /* Grid apenas visible */
+  background-size: cover, 40px 40px;
+  background-repeat: no-repeat, repeat;
+  background-position: center top;
 }
 .solution-title-wrapper { border: 1px solid var(--color-text-primary); border-radius: 40px; padding: 12px 24px; margin: 0 auto 64px; width: fit-content; }
 .solution-title { color: var(--color-text-secondary); font-size: 32px !important; font-weight: 500; text-align: center; }
