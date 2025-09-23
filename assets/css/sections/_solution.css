@@ -1,18 +1,18 @@
 .solution-section {
-  padding-bottom: 193px;
+  padding-bottom: 96px; /* Espaciado normalizado */
 }
 
 .solution-title-wrapper {
   border: 1px solid var(--color-text-primary);
   border-radius: 40px;
-  padding: 15px 35px;
-  margin: 0 auto 97px;
+  padding: 12px 24px;
+  margin: 0 auto 64px; /* Espaciado normalizado */
   width: fit-content;
 }
 
 .solution-title {
   color: var(--color-text-secondary);
-  font-size: 45px;
+  font-size: 42px;
   font-weight: 500;
   text-align: center;
 }
@@ -20,46 +20,40 @@
 .solution-cards {
   display: flex;
   justify-content: center;
-  gap: 55px;
+  gap: 32px; /* Espacio entre tarjetas reducido */
   flex-wrap: wrap;
 }
 
 .solution-card {
   background-color: var(--color-surface-dark);
-  border-radius: 10px;
-  padding: 20px 10px;
+  border-radius: 12px;
+  padding: 32px 24px; /* Padding ajustado */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  width: 260px;
+  gap: 12px;
+  width: 280px; /* Ancho ajustado */
   text-align: center;
 }
 
 .solution-card img {
-  width: 70px;
-  height: 70px;
-  margin-bottom: 30px;
+  width: 56px; /* Iconos ligeramente más pequeños */
+  height: 56px;
+  margin-bottom: 16px;
 }
 
 .solution-card h3 {
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 20px; /* Título más grande */
+  font-weight: 500;
   color: var(--color-text-secondary);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .solution-card p {
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--color-text-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-primary);
   max-width: 240px;
-}
-
-@media (max-width: 1200px) {
-  .solution-cards {
-      gap: 30px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -68,6 +62,6 @@
   }
   .solution-title-wrapper {
       padding: 10px 20px;
-      margin-bottom: 60px;
+      margin-bottom: 48px;
   }
 }
