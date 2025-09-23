@@ -175,14 +175,13 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   padding-top: 64px;
   position: relative;
   overflow: hidden;
-  /* CAMBIO: Añadimos un degradado para difuminar a negro al final */
   background-image: linear-gradient(to bottom, transparent 60%, var(--color-background) 100%);
 }
 /* Pseudo-elemento para el grid con máscara */
 .problem-section::before {
   content: '';
   position: absolute;
-  top: -100px; /* Inicia el grid más arriba para que se vea el difuminado desde el inicio */
+  top: -100px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -195,7 +194,7 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 .problem-section::after {
   content: '';
   position: absolute;
-  top: -150px; /* Posiciona la luz más arriba aún */
+  top: -150px;
   left: 50%;
   transform: translateX(-50%);
   width: 1000px;
