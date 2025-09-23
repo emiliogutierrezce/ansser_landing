@@ -29,6 +29,15 @@
   transition: padding 0.3s ease-in-out;
 }
 
+/* Este es el estilo que tomará el header CUANDO tenga la clase .scrolled */
+.site-header.scrolled .header-container {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: rgba(16, 10, 28, 0.8); /* Un poco más opaco */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Sombra más pronunciada */
+}
+
+
 .main-nav a {
   font-size: 1rem; /* 16px */
   font-weight: 500;
