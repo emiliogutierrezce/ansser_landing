@@ -175,6 +175,8 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   padding-top: 64px;
   position: relative;
   overflow: hidden;
+  /* CAMBIO: Añadimos un degradado para difuminar a negro al final */
+  background-image: linear-gradient(to bottom, transparent 60%, var(--color-background) 100%);
 }
 /* Pseudo-elemento para el grid con máscara */
 .problem-section::before {
