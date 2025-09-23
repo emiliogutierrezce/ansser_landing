@@ -1,52 +1,95 @@
+/* ====================================================
+   HEADER STYLES
+   ==================================================== */
+
+/* Contenedor principal del header que se hace sticky */
 .site-header {
-  position: sticky; /* <-- LA PROPIEDAD CLAVE */
-  top: 16px;       /* <-- Margen superior cuando se "pega" */
-  
-  left: 0;
-  right: 0;
+  position: sticky;
+  top: 16px;
   z-index: 1000;
-  width: 100%;
   
-  /* Transición suave para cambios de estilo */
+  /* Hacemos que la transición del padding sea más suave */
   transition: top 0.3s ease-in-out;
 }
 
-/* Mantenemos los estilos del contenedor que ya mejoramos */
+/* El contenedor visible con forma de píldora (AQUÍ ESTABA EL PROBLEMA) */
 .header-container {
-  /* ... tus estilos de glassmorphism aquí ... */
+  /* Propiedades de layout que se habían perdido */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+  /* Propiedades visuales (Glassmorphism) */
   background-color: rgba(16, 10, 28, 0.5);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--border-radius-large);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  
+  /* Espaciado y transiciones */
   padding: 12px 24px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-  /* Añadimos una transición para el padding */
-  transition: padding 0.3s ease-in-out;
+  transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Este es el estilo que tomará el header CUANDO tenga la clase .scrolled */
+/* --- ESTADO SCROLLED (cuando se baja la página) --- */
 .site-header.scrolled .header-container {
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color: rgba(16, 10, 28, 0.8); /* Un poco más opaco */
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Sombra más pronunciada */
+  background-color: rgba(16, 10, 28, 0.8);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
 }
 
+/* --- ESTILOS DE LOS ELEMENTOS INTERNOS --- */
 
-/* Estilo para el enlace de navegación de la sección activa */
+.logo img {
+  width: 120px;
+  height: auto;
+  display: block; /* Asegura que no haya espacio extra */
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.main-nav a {
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--color-text-accent);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: var(--color-primary-light);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.main-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Estilo para el enlace activo */
 .main-nav a.active {
   color: var(--color-primary-light);
 }
 
-/* Opcional: Evita que la línea animada aparezca en el enlace activo */
 .main-nav a.active::after {
   transform: scaleX(1);
-  transform-origin: bottom left;
 }
 
 .auth-links {
@@ -56,22 +99,23 @@
 }
 
 .auth-links a {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
 }
 
 .register-btn {
   background-color: var(--color-primary-light);
-  padding: 8px 20px; /* Padding ajustado */
-  border-radius: 40px;
+  padding: 8px 20px;
+  border-radius: var(--border-radius-large);
 }
 
+/* Media query para responsividad */
 @media (max-width: 768px) {
   .header-container {
-      flex-direction: column;
-      gap: 15px;
+    flex-direction: column;
+    gap: 15px;
   }
   .main-nav {
-      gap: 20px;
+    gap: 20px;
   }
 }
