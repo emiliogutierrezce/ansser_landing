@@ -13,19 +13,20 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-@keyframes subtle-neon-pulse {
-  0%, 100% {
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     text-shadow:
-      0 0 4px var(--color-primary-light),
-      0 0 8px var(--color-primary-light),
-      0 0 16px var(--color-primary);
+      0 0 5px var(--color-primary-light),
+      0 0 10px var(--color-primary-light),
+      0 0 20px var(--color-primary-light),
+      0 0 40px var(--color-primary),
+      0 0 80px var(--color-primary);
   }
-  50% {
-    text-shadow:
-      0 0 6px var(--color-primary-light),
-      0 0 12px var(--color-primary-light),
-      0 0 24px var(--color-primary);
+  20%, 24%, 55% {       
+    text-shadow: none;
   }
+}
+
 
 /* Contenido de: base/_reset.css */
 *, *::before, *::after { box-sizing: border-box; }
@@ -245,46 +246,42 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 
 /* Contenido de: sections/_solution.css */
 .solution-section {
-  padding-top: 64px;
   padding-bottom: 96px;
-  background-color: var(--color-background);
+  background-color: var(--color-background); /* Fondo sólido */
 }
-.solution-title-wrapper { display: none; } /* Mantenemos oculto el wrapper viejo */
-.solution-title {
-  color: var(--color-text-primary);
-  font-size: 36px;
-  font-weight: 500;
-  text-align: center;
-  margin: 0 auto 64px;
-  animation: subtle-neon-pulse 4s infinite alternate ease-in-out; /* Nueva animación sutil */
+.solution-title-wrapper { 
+  border: 1px solid var(--color-text-primary); 
+  border-radius: 40px; 
+  padding: 12px 24px; 
+  margin: 0 auto 64px; 
+  width: fit-content; 
+}
+.solution-title { 
+  color: var(--color-text-primary); 
+  font-size: 36px !important; 
+  font-weight: 500; 
+  text-align: center; 
+  animation: neon-flicker 5s infinite alternate; /* Animación de neón */
 }
 .solution-cards { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
-.solution-card {
-  background-color: var(--color-glass-background);
-  border-radius: 12px;
-  padding: 32px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  width: 280px;
-  text-align: center;
-  backdrop-filter: blur(var(--backdrop-blur-value));
-  transition: transform 0.3s ease;
-  border: 1px solid transparent;
-  background-image: 
-    linear-gradient(var(--color-background), var(--color-background)),
-    radial-gradient(circle at top left, var(--color-primary), #333 80%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-}
-.solution-card:hover {
-  transform: translateY(-5px);
+.solution-card { 
+  background-color: var(--color-surface-dark); 
+  border-radius: 12px; 
+  padding: 32px 24px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 12px; 
+  width: 280px; 
+  text-align: center; 
 }
 .solution-card img { width: 56px; height: 56px; margin-bottom: 16px; }
 .solution-card h3 { font-size: 20px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 8px; }
 .solution-card p { font-size: 16px; font-weight: 400; color: var(--color-text-primary); max-width: 240px; }
-@media (max-width: 768px) { .solution-title { font-size: 28px; } }
+@media (max-width: 768px) { 
+  .solution-title { font-size: 28px !important; } 
+  .solution-title-wrapper { padding: 10px 20px; margin-bottom: 48px; } 
+}
 
 /* Contenido de: sections/_features.css */
 .features-section { padding: 100px 0; text-align: center; }
