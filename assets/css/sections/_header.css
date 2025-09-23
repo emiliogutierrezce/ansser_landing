@@ -1,26 +1,32 @@
 .site-header {
-  padding-top: 24px; /* Espacio superior reducido */
-  position: sticky;
-  top: 0;
+  position: sticky; /* <-- LA PROPIEDAD CLAVE */
+  top: 16px;       /* <-- Margen superior cuando se "pega" */
+  
+  left: 0;
+  right: 0;
   z-index: 1000;
   width: 100%;
+  
+  /* Transición suave para cambios de estilo */
+  transition: top 0.3s ease-in-out;
 }
 
+/* Mantenemos los estilos del contenedor que ya mejoramos */
 .header-container {
+  /* ... tus estilos de glassmorphism aquí ... */
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  /* --- EFECTO GLASSMORPHISM --- */
-  background-color: rgba(16, 10, 28, 0.5); /* Un fondo un poco más oscuro y transparente */
-  backdrop-filter: blur(12px); /* La magia del desenfoque */
+  background-color: rgba(16, 10, 28, 0.5);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil para definir el cristal */
-  /* --- FIN EFECTO --- */
-
-  border-radius: var(--border-radius-large); /* Usando variables */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-large);
   padding: 12px 24px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  /* Añadimos una transición para el padding */
+  transition: padding 0.3s ease-in-out;
 }
 
 .main-nav a {
