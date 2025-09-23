@@ -10,26 +10,47 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(242, 243, 247, 0.2);
-  border-radius: 40px;
-  padding: 12px 24px; /* Padding interno reducido */
+
+  /* --- EFECTO GLASSMORPHISM --- */
+  background-color: rgba(16, 10, 28, 0.5); /* Un fondo un poco más oscuro y transparente */
+  backdrop-filter: blur(12px); /* La magia del desenfoque */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil para definir el cristal */
+  /* --- FIN EFECTO --- */
+
+  border-radius: var(--border-radius-large); /* Usando variables */
+  padding: 12px 24px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.logo img {
-  width: 120px; /* Logo ligeramente más pequeño */
-  height: auto;
-}
-
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
 .main-nav a {
-  font-size: 16px;
+  font-size: 1rem; /* 16px */
   font-weight: 500;
+  position: relative; /* Necesario para el pseudo-elemento */
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--color-text-accent); /* Cambia de color al hacer hover */
+}
+
+/* Línea animada debajo del enlace */
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0); /* Empieza invisible */
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: var(--color-primary-light);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.main-nav a:hover::after {
+  transform: scaleX(1); /* Se expande */
+  transform-origin: bottom left;
 }
 
 .auth-links {
