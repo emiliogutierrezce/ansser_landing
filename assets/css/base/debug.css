@@ -14,13 +14,14 @@
   100% { background-position: 0% 50%; }
 }
 
-/* === NUEVA ANIMACIÓN PARA BLOB DE FONDO === */
+/* === ANIMACIÓN PARA BLOB DE FONDO (SE MANTIENE) === */
 @keyframes moveBlob {
   0% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(20px, -30px) scale(1.05); }
   66% { transform: translate(-20px, 30px) scale(0.95); }
   100% { transform: translate(0, 0) scale(1); }
 }
+
 
 /* Contenido de: base/_reset.css */
 *, *::before, *::after { box-sizing: border-box; }
@@ -46,35 +47,17 @@ input, button, textarea, select { font: inherit; }
   --font-main: 'Inter', sans-serif;
 }
 
-/* Contenido de: base/_global.css (MODIFICADO) */
+/* Contenido de: base/_global.css (REVERTIDO) */
 body {
-  background-color: var(--color-background);
+  background-color: var(--color-background); /* Fondo simple, como antes */
   color: var(--color-text-primary);
   font-family: var(--font-main);
   font-size: 16px;
   line-height: 1.6;
-  position: relative; /* Para que los pseudo-elementos del body se posicionen correctamente */
-  z-index: 0; /* Asegura que el body esté debajo de todo lo demás */
+  position: static; /* No necesitamos position relative aquí, como antes */
+  z-index: auto; /* Sin z-index específico, como antes */
 }
-
-/* Nuevo: Fondo sutil para el body, inspirado en Sasifye */
-body::before {
-  content: '';
-  position: fixed; /* O fixed para que siempre se vea */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(ellipse at 10% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 70%),
-    radial-gradient(ellipse at 90% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 70%),
-    url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L100 50L50 100L0 50L50 0Z" fill="%23FFFFFF" fill-opacity="0.03"/></svg>'); /* Pequeñas formas geométricas */
-  background-size: cover, cover, 100px 100px; /* Ajusta el tamaño del SVG según quieras la densidad */
-  background-attachment: fixed; /* Hace que el fondo no se mueva con el scroll */
-  opacity: 0.8; /* Opacidad para que sea muy sutil */
-  z-index: -2; /* Más bajo que el hero y el header */
-  pointer-events: none; /* Asegura que no interfiera con interacciones */
-}
+/* Eliminado: pseudo-elementos ::before y ::after del body */
 
 .container { width: 100%; max-width: 1280px; margin-left: auto; margin-right: auto; padding-left: 32px; padding-right: 32px; }
 .section-title { color: var(--color-text-accent); font-size: 36px !important; font-weight: 500; text-align: center; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
@@ -103,7 +86,7 @@ body::before {
 .register-btn { background-color: var(--color-primary-light); padding: 8px 20px; border-radius: 40px; font-size: 16px; }
 @media (max-width: 768px) { .header-container { flex-direction: column; gap: 15px; } .main-nav { gap: 20px; } }
 
-/* Contenido de: sections/_hero.css */
+/* Contenido de: sections/_hero.css (REVERTIDO) */
 .hero-section {
   min-height: 100vh;
   display: flex;
@@ -113,7 +96,7 @@ body::before {
   position: relative;
   overflow: hidden;
   padding: 80px 0;
-  z-index: 1; /* Asegura que el hero esté por encima del fondo del body */
+  z-index: 1;
 }
 
 .hero-section::before {
@@ -205,16 +188,15 @@ body::before {
   .hero-cta-buttons { flex-direction: column; gap: 15px; }
 }
 
-/* Contenido de: sections/_problem.css (MODIFICADO) */
+/* Contenido de: sections/_problem.css (MANTIENE ESTILO SASIFYE) */
 .problem-section {
   padding-bottom: 96px;
   padding-top: 64px;
-  position: relative; /* Necesario para los pseudo-elementos */
-  overflow: hidden; /* Asegura que los blobs no se desborden si son grandes */
-  z-index: 1; /* Asegura que la sección esté por encima del fondo del body */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-/* Nuevo: Blob de fondo para la sección Problem, inspirado en Sasifye */
 .problem-section::before {
   content: '';
   position: absolute;
@@ -249,15 +231,15 @@ body::before {
   gap: 12px;
   max-width: 320px;
   text-align: center;
-  background-color: rgba(196, 181, 253, 0.05); /* Fondo ligeramente más claro para la tarjeta */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+  background-color: rgba(196, 181, 253, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 30px;
-  backdrop-filter: blur(5px); /* Efecto cristal para la tarjeta */
+  backdrop-filter: blur(5px);
   transition: transform 0.3s ease;
 }
 .problem-card:hover {
-    transform: translateY(-5px); /* Pequeño efecto hover */
+    transform: translateY(-5px);
 }
 .card-header { display: flex; align-items: center; justify-content: center; gap: 12px; }
 .card-header img { width: 24px; height: 24px; }
@@ -265,15 +247,14 @@ body::before {
 .problem-card p { font-size: 16px; font-weight: 400; color: var(--color-text-primary); padding-left: 0; }
 @media (max-width: 1024px) { .problem-cards { flex-direction: column; align-items: center; gap: 48px; } }
 
-/* Contenido de: sections/_solution.css (MODIFICADO) */
+/* Contenido de: sections/_solution.css (MANTIENE ESTILO SASIFYE) */
 .solution-section {
   padding-bottom: 96px;
-  position: relative; /* Necesario para los pseudo-elementos */
+  position: relative;
   overflow: hidden;
-  z-index: 1; /* Asegura que la sección esté por encima del fondo del body */
+  z-index: 1;
 }
 
-/* Nuevo: Blob de fondo para la sección Solution, inspirado en Sasifye */
 .solution-section::before {
   content: '';
   position: absolute;
@@ -301,19 +282,19 @@ body::before {
 }
 
 .solution-title-wrapper {
-  border: 1px solid var(--color-border); /* Usamos el borde genérico */
+  border: 1px solid var(--color-border);
   border-radius: 40px;
   padding: 12px 24px;
   margin: 0 auto 64px;
   width: fit-content;
-  background-color: rgba(242, 243, 247, 0.05); /* Fondo sutil para el wrapper del título */
+  background-color: rgba(242, 243, 247, 0.05);
   backdrop-filter: blur(5px);
 }
 .solution-title { color: var(--color-text-secondary); font-size: 36px !important; font-weight: 500; text-align: center; }
 .solution-cards { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
 .solution-card {
-  background-color: rgba(196, 181, 253, 0.05); /* Fondo ligeramente más claro para la tarjeta */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+  background-color: rgba(196, 181, 253, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 32px 24px;
   display: flex;
@@ -322,11 +303,11 @@ body::before {
   gap: 12px;
   width: 280px;
   text-align: center;
-  backdrop-filter: blur(5px); /* Efecto cristal para la tarjeta */
+  backdrop-filter: blur(5px);
   transition: transform 0.3s ease;
 }
 .solution-card:hover {
-    transform: translateY(-5px); /* Pequeño efecto hover */
+    transform: translateY(-5px);
 }
 .solution-card img { width: 56px; height: 56px; margin-bottom: 16px; }
 .solution-card h3 { font-size: 20px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 8px; }
