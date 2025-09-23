@@ -247,7 +247,7 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 /* Contenido de: sections/_solution.css */
 .solution-section {
   padding-bottom: 96px;
-  background-color: var(--color-background); /* Fondo sólido */
+  background-color: var(--color-background);
 }
 .solution-title-wrapper { display: none; }
 .solution-title {
