@@ -81,15 +81,14 @@ body {
 .register-btn { background-color: var(--color-primary-light); padding: 8px 20px; border-radius: 40px; font-size: 16px; }
 @media (max-width: 768px) { .header-container { flex-direction: column; gap: 15px; } .main-nav { gap: 20px; } }
 
-/* Contenido de: sections/_hero.css (MODIFICADO) */
+/* Contenido de: sections/_hero.css (ARREGLADO) */
 .hero-section {
-  height: 100vh; /* Usamos height en vez de min-height para que se pegue */
+  min-height: 100vh; /* <-- Regresamos a min-height */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: sticky; /* <-- CAMBIO CLAVE: Hacemos que el hero se "pegue" */
-  top: 0;
+  position: relative; /* <-- Regresamos a relative */
   overflow: hidden;
 }
 
@@ -176,22 +175,22 @@ body {
 .pill { display: none; }
 
 @media (max-width: 768px) {
-  .hero-section { height: 80vh; }
+  .hero-section { min-height: 80vh; }
   .hero-title { font-size: 40px; }
   .hero-subtitle { font-size: 18px; }
   .hero-cta-buttons { flex-direction: column; gap: 15px; }
 }
 
-/* Contenido de: sections/_problem.css (MODIFICADO) */
+/* Contenido de: sections/_problem.css (ARREGLADO) */
 .problem-section {
   padding-bottom: 96px;
   padding-top: 64px;
   position: relative;
   overflow: hidden;
-  z-index: 2; /* <-- CAMBIO CLAVE: Aumentamos z-index para que pase por encima del hero */
-  background-color: var(--color-background); /* <-- CAMBIO CLAVE: Le damos un fondo sólido */
-  border-top-left-radius: 40px; /* <-- CAMBIO CLAVE: Redondeamos las esquinas superiores */
-  border-top-right-radius: 40px;
+  z-index: 1; /* <-- Regresamos a z-index 1 */
+  background-color: transparent; /* <-- Quitamos el fondo sólido */
+  border-top-left-radius: 0; /* <-- Quitamos los bordes redondeados */
+  border-top-right-radius: 0;
 }
 
 .problem-section::before {
@@ -244,13 +243,13 @@ body {
 .problem-card p { font-size: 16px; font-weight: 400; color: var(--color-text-primary); padding-left: 0; }
 @media (max-width: 1024px) { .problem-cards { flex-direction: column; align-items: center; gap: 48px; } }
 
-/* Contenido de: sections/_solution.css (MODIFICADO) */
+/* Contenido de: sections/_solution.css (ARREGLADO) */
 .solution-section {
   padding-bottom: 96px;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background-color: var(--color-background); /* <-- CAMBIO CLAVE: Le damos un fondo sólido */
+  background-color: transparent; /* <-- Quitamos el fondo sólido */
 }
 
 .solution-section::before {
