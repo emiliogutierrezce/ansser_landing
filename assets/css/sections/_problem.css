@@ -1,55 +1,18 @@
+/* Contenido de: sections/_problem.css */
 .problem-section {
-  padding-bottom: 96px; /* Espaciado normalizado */
+  padding-bottom: 96px;
+  padding-top: 64px;
+  position: relative;
+  overflow: hidden;
+  background-image:
+    radial-gradient(ellipse at 10% 15%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 95% 90%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
 }
-
-.problem-title {
-  color: var(--color-text-secondary);
-  margin-bottom: 64px; /* Espaciado normalizado */
-}
-
-.problem-cards {
-  display: flex;
-  justify-content: center;
-  gap: 48px; /* Espacio entre tarjetas reducido */
-}
-
-.problem-card {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 320px; /* Ancho máximo ajustado */
-  text-align: center; /* Centramos todo para mayor consistencia */
-}
-
-.card-header {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Centramos el header */
-  gap: 12px;
-}
-
-.card-header img {
-  width: 24px;
-  height: 24px;
-}
-
-.card-header h3 {
-  font-size: 20px; /* Título de tarjeta más grande */
-  font-weight: 500;
-  color: var(--color-text-secondary);
-}
-
-.problem-card p {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--color-text-primary);
-  padding-left: 0; /* Eliminamos el padding que ya no es necesario */
-}
-
-@media (max-width: 1024px) {
-  .problem-cards {
-      flex-direction: column;
-      align-items: center;
-      gap: 48px;
-  }
-}
+.problem-title { color: var(--color-text-secondary); margin-bottom: 64px; }
+.problem-cards { display: flex; justify-content: center; gap: 48px; }
+.problem-card { display: flex; flex-direction: column; gap: 12px; max-width: 320px; text-align: center; }
+.card-header { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.card-header img { width: 24px; height: 24px; } /* <-- REGLA RESTAURADA */
+.card-header h3 { font-size: 20px; font-weight: 500; color: var(--color-text-secondary); }
+.problem-card p { font-size: 16px; font-weight: 400; color: var(--color-text-primary); padding-left: 0; }
+@media (max-width: 1024px) { .problem-cards { flex-direction: column; align-items: center; gap: 48px; } }
