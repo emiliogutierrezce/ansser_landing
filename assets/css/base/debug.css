@@ -246,10 +246,11 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 
 /* Contenido de: sections/_solution.css */
 .solution-section {
+  padding-top: 64px; /* Añadimos padding superior */
   padding-bottom: 96px;
   background-color: var(--color-background);
 }
-.solution-title-wrapper { display: none; }
+.solution-title-wrapper { display: none; } /* Mantenemos oculto el wrapper viejo */
 .solution-title {
   color: var(--color-text-primary);
   font-size: 36px;
