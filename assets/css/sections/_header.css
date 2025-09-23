@@ -13,7 +13,12 @@
 }
 
 /* El contenedor visible con forma de píldora (AQUÍ ESTABA EL PROBLEMA) */
-.header-container {  
+.header-container {
+  /* Propiedades de layout que se habían perdido */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
   /* Propiedades visuales (Glassmorphism) */
   background-color: rgba(16, 10, 28, 0.5);
   backdrop-filter: blur(12px);
@@ -25,13 +30,6 @@
   /* Espaciado y transiciones */
   padding: 12px 24px;
   transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Nuevo contenedor para el layout interno */
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 /* --- ESTADO SCROLLED (cuando se baja la página) --- */
@@ -113,15 +111,11 @@
 
 /* Media query para responsividad */
 @media (max-width: 768px) {
-  .header-content {
+  .header-container {
     flex-direction: column;
     gap: 15px;
   }
   .main-nav {
     gap: 20px;
-  }
-  .auth-links {
-    width: 100%;
-    justify-content: space-around;
   }
 }
