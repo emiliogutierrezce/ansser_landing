@@ -12,7 +12,7 @@
   --color-border-dark: #292929;
   --font-main: 'Inter', sans-serif;
   /* Dentro de :root {} en _variables.css */
-  --color-glass-background: rgba(196, 181, 253, 0.05); /* Fondo para efecto glass */
-  --color-glass-border: rgba(255, 255, 255, 0.1);    /* Borde para efecto glass */
-  --backdrop-blur-value: 10px;                       /* Valor de blur para glass */
+  --color-glass-background: rgba(26, 26, 26, 0.5); /* Un fondo oscuro semitransparente */
+  --color-glass-border: rgba(255, 255, 255, 0.1);    /* Borde blanco muy sutil */
+  --backdrop-blur-value: 10px;                       /* Valor de blur para el efecto cristal */
 }
