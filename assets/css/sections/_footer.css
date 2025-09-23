@@ -1,6 +1,6 @@
 .site-footer {
   background-color: var(--color-surface-dark);
-  padding: 64px 0; /* Aumentamos un poco el padding para más aire */
+  padding: 64px 0;
 }
 
 .footer-container {
@@ -16,16 +16,16 @@
 }
 
 .footer-col:first-child {
-  max-width: 320px; /* Ancho ajustado */
+  max-width: 320px;
 }
 
 .footer-logo img {
-  width: 120px; /* <-- Corregido */
+  width: 120px !important; /* <-- CAMBIO DEFINITIVO AQUÍ */
   height: auto;
 }
 
 .footer-desc {
-  font-size: 16px; /* Ajustado al nuevo tamaño base */
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -45,7 +45,7 @@
 .footer-col ul {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Espacio entre links ajustado */
+  gap: 16px;
 }
 
 .footer-col ul a {
