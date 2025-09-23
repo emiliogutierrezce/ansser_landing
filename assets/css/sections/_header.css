@@ -38,33 +38,14 @@
 }
 
 
-.main-nav a {
-  font-size: 1rem; /* 16px */
-  font-weight: 500;
-  position: relative; /* Necesario para el pseudo-elemento */
-  transition: color 0.3s ease;
+/* Estilo para el enlace de navegación de la sección activa */
+.main-nav a.active {
+  color: var(--color-primary-light);
 }
 
-.main-nav a:hover {
-  color: var(--color-text-accent); /* Cambia de color al hacer hover */
-}
-
-/* Línea animada debajo del enlace */
-.main-nav a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0); /* Empieza invisible */
-  height: 2px;
-  bottom: -6px;
-  left: 0;
-  background-color: var(--color-primary-light);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
-}
-
-.main-nav a:hover::after {
-  transform: scaleX(1); /* Se expande */
+/* Opcional: Evita que la línea animada aparezca en el enlace activo */
+.main-nav a.active::after {
+  transform: scaleX(1);
   transform-origin: bottom left;
 }
 
