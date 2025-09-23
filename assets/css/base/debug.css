@@ -2,6 +2,19 @@
    DEBUG STYLESHEET - ARCHIVO CONSOLIDADO
    ==================================================== */
 
+/* === NUEVAS ANIMACIONES === */
+@keyframes subtle-glow {
+  0%, 100% { text-shadow: 0 0 5px rgba(196, 181, 253, 0.3); }
+  50% { text-shadow: 0 0 15px rgba(196, 181, 253, 0.6); }
+}
+
+@keyframes wave-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
 /* Contenido de: base/_reset.css */
 *, *::before, *::after { box-sizing: border-box; }
 body, h1, h2, h3, h4, p, ul, ol, li, figure, figcaption, blockquote, dl, dd { margin: 0; }
@@ -48,31 +61,36 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 .register-btn { background-color: var(--color-primary-light); padding: 8px 20px; border-radius: 40px; font-size: 16px; }
 @media (max-width: 768px) { .header-container { flex-direction: column; gap: 15px; } .main-nav { gap: 20px; } }
 
-/* Contenido de: sections/_hero.css */
+/* Contenido de: sections/_hero.css (MODIFICADO) */
 .hero-section {
+  min-height: 100vh; /* 2. El hero abarca toda la pantalla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 96px 0 128px;
   position: relative;
-  overflow: hidden; /* Asegura que el gradiente de fondo no se desborde */
+  overflow: hidden;
+  padding: 80px 0; /* Padding para evitar que el contenido toque los bordes en pantallas pequeñas */
 }
 
-/* Efecto de fondo similar a Sasifye */
 .hero-section::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: 0; /* 1. El degradado empieza desde arriba */
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(at 20% 10%, var(--color-primary-light) 0%, transparent 50%),
-              radial-gradient(at 80% 90%, var(--color-primary-dark) 0%, transparent 50%);
-  opacity: 0.3; /* Ajusta la opacidad para que no sea demasiado fuerte */
+  background: radial-gradient(at 20% 10%, var(--color-primary-light) 0%, transparent 40%),
+              radial-gradient(at 80% 90%, var(--color-primary-dark) 0%, transparent 40%);
+  opacity: 0.3;
   z-index: -1;
-  filter: blur(80px); /* Un poco de blur para la sensación de nube de color */
+  filter: blur(80px);
+  background-size: 200% 200%; /* 4. Hacemos el fondo más grande para animarlo */
+  animation: wave-gradient 20s ease-in-out infinite; /* 4. Aplicamos la animación de ola */
 }
 
 .hero-content {
-    position: relative; /* Asegura que el contenido esté por encima del pseudo-elemento */
+    position: relative;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -80,25 +98,15 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 }
 
 .hero-integrations-label {
-    background-color: var(--color-surface-light); /* Fondo semitransparente como el de Sasifye */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+    background-color: rgba(196, 181, 253, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50px;
     padding: 8px 18px;
     font-size: 14px;
     font-weight: 500;
     color: var(--color-text-primary);
-    margin-bottom: 24px; /* Espacio para el título */
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    margin-bottom: 24px;
 }
-
-.hero-integrations-label img {
-    width: 16px; /* Ajusta el tamaño del icono si lo hubiera */
-    height: 16px;
-    display: inline-block; /* Para que el icono no rompa el flex */
-}
-
 
 .hero-title {
   color: var(--color-text-primary);
@@ -106,41 +114,32 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 16px;
-  max-width: 900px; /* Limita el ancho del título para que no sea demasiado largo */
+  max-width: 900px;
 }
 
 .hero-subtitle {
   color: var(--color-text-accent);
-  font-size: 20px;
+  font-size: 24px; /* 3. Hacemos el subtítulo más grande */
   font-weight: 400;
   line-height: 1.5;
   text-shadow: none;
-  margin: 0 auto 32px; /* Espacio ajustado para los botones */
+  margin: 0 auto 32px;
   max-width: 650px;
+  animation: subtle-glow 4s ease-in-out infinite; /* 3. Aplicamos animación de brillo */
 }
 
 .hero-cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espacio entre los botones */
-    margin-bottom: 48px;
-    flex-wrap: wrap; /* Para que los botones se envuelvan en móvil */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.hero-cta-buttons .cta-button:first-child {
-    background-color: var(--color-primary); /* Botón primario */
+.secondary-cta-button {
+    background-color: transparent;
     color: var(--color-text-primary);
-    border: none;
-}
-.hero-cta-buttons .cta-button:first-child:hover {
-    background-color: var(--color-primary-dark);
-}
-
-.hero-cta-buttons .secondary-cta-button {
-    background-color: transparent; /* Botón secundario transparente */
-    color: var(--color-text-primary);
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil como Sasifye */
-    padding: 14px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 13px 28px; /* Ajustamos padding para que coincida con el borde */
     border-radius: 12px;
     font-size: 16px;
     font-weight: 500;
@@ -148,26 +147,24 @@ body { background-color: var(--color-background); color: var(--color-text-primar
     transition: all 0.3s ease;
 }
 
-.hero-cta-buttons .secondary-cta-button:hover {
+.secondary-cta-button:hover {
     border-color: var(--color-primary-light);
     color: var(--color-primary-light);
 }
 
-
-/* Removimos .integrations-pills para usar .hero-integrations-label */
 .integrations-pills { display: none; }
 .pill { display: none; }
 
-
 @media (max-width: 768px) {
-  .hero-section { padding: 64px 0; }
+  .hero-section { min-height: 80vh; } /* Reducimos en móvil para que no sea tan largo */
   .hero-title { font-size: 40px; }
   .hero-subtitle { font-size: 18px; }
   .hero-cta-buttons { flex-direction: column; gap: 15px; }
 }
 
+/* (El resto de los archivos CSS permanecen sin cambios) */
 /* Contenido de: sections/_problem.css */
-.problem-section { padding-bottom: 96px; }
+.problem-section { padding-bottom: 96px; padding-top: 64px; } /* Añadimos padding-top para separar del hero */
 .problem-title { color: var(--color-text-secondary); margin-bottom: 64px; }
 .problem-cards { display: flex; justify-content: center; gap: 48px; }
 .problem-card { display: flex; flex-direction: column; gap: 12px; max-width: 320px; text-align: center; }
@@ -177,6 +174,7 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 .problem-card p { font-size: 16px; font-weight: 400; color: var(--color-text-primary); padding-left: 0; }
 @media (max-width: 1024px) { .problem-cards { flex-direction: column; align-items: center; gap: 48px; } }
 
+/* ... (resto del CSS de las otras secciones) ... */
 /* Contenido de: sections/_solution.css */
 .solution-section { padding-bottom: 96px; }
 .solution-title-wrapper { border: 1px solid var(--color-text-primary); border-radius: 40px; padding: 12px 24px; margin: 0 auto 64px; width: fit-content; }
@@ -252,7 +250,6 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 .cta-section { text-align: center; padding: 128px 0; }
 .cta-section .hero-title { font-size: 42px; }
 .cta-section .hero-subtitle { font-size: 20px; }
-
 
 /* Contenido de: sections/_footer.css */
 .site-footer { background-color: var(--color-surface-dark); padding: 64px 0; }
