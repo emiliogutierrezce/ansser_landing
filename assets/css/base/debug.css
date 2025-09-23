@@ -175,11 +175,13 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   padding-top: 64px;
   position: relative;
   overflow: hidden;
+  /* El background-color directo del body ya provee el fondo negro */
 }
+/* Pseudo-elemento para el grid con máscara */
 .problem-section::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: -100px; /* Inicia el grid más arriba para que se vea el difuminado desde el inicio */
   left: 0;
   right: 0;
   bottom: 0;
@@ -188,14 +190,15 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   mask-image: radial-gradient(ellipse 50% 70% at 50% 0%, white 0%, rgba(255,255,255,0.3) 40%, transparent 70%);
   z-index: -1;
 }
+/* Pseudo-elemento para la luz de fondo */
 .problem-section::after {
   content: '';
   position: absolute;
-  top: 0;
+  top: -150px; /* Posiciona la luz más arriba aún */
   left: 50%;
   transform: translateX(-50%);
-  width: 800px;
-  height: 600px;
+  width: 1000px; /* Hago la luz un poco más grande para una difuminación más amplia */
+  height: 800px;
   background-image: radial-gradient(ellipse, rgba(139, 92, 246, 0.15), transparent 80%);
   z-index: -2;
 }
@@ -211,7 +214,9 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 /* Contenido de: sections/_solution.css */
 .solution-section {
   padding-bottom: 96px;
-  background-color: var(--color-background); /* Fondo sólido */
+  background-color: var(--color-background); /* Fondo sólido, sin grid ni efectos */
+  position: relative; /* Se mantiene por si en el futuro se quiere añadir algo */
+  overflow: hidden;
 }
 .solution-title-wrapper { border: 1px solid var(--color-text-primary); border-radius: 40px; padding: 12px 24px; margin: 0 auto 64px; width: fit-content; }
 .solution-title { color: var(--color-text-secondary); font-size: 36px !important; font-weight: 500; text-align: center; }
@@ -221,17 +226,6 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 .solution-card h3 { font-size: 20px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 8px; }
 .solution-card p { font-size: 16px; font-weight: 400; color: var(--color-text-primary); max-width: 240px; }
 @media (max-width: 768px) { .solution-title { font-size: 28px !important; } .solution-title-wrapper { padding: 10px 20px; margin-bottom: 48px; } }
-.features-section { padding: 100px 0; text-align: center; }
-.features-icon { width: 94px; height: 94px; margin: 0 auto 40px; }
-.features-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 58px; margin-bottom: 46px; }
-.feature-item { background-color: var(--color-surface-light); border-radius: 15px; height: 356px; }
-.feature-item.large { grid-column: span 7; }
-.feature-item.small { grid-column: span 5; }
-.feature-item.full-width { grid-column: span 12; height: 218px; }
-.video-demo-link { display: inline-flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 500; color: var(--color-text-primary); text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
-.video-demo-link img { width: 25px; height: 25px; }
-@media (max-width: 1024px) { .features-grid { display: flex; flex-direction: column; gap: 20px; } .feature-item, .feature-item.large, .feature-item.small, .feature-item.full-width { width: 100%; height: 200px; } }
-
 /* Contenido de: sections/_how-it-works.css */
 .how-it-works-section { padding-bottom: 96px; }
 .steps-container { position: relative; display: flex; flex-direction: column; gap: 67px; max-width: 700px; margin-left: auto; margin-right: auto; }
