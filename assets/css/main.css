@@ -15,17 +15,10 @@
 @import 'sections/_hero.css';
 @import 'sections/_problem.css';
 @import 'sections/_solution.css';
-/* @import 'sections/_features.css'; */ /* Descomentar si se usa la sección features */
+@import 'sections/_features.css';
 @import 'sections/_how-it-works.css';
 @import 'sections/_stats.css';
 @import 'sections/_plans.css';
 @import 'sections/_faq.css';
 @import 'sections/_cta.css';
 @import 'sections/_footer.css';
-
-/* assets/css/main.css */
-/* ... tus otros imports ... */
-@import 'sections/_solution.css';
-@import 'sections/_features.css'; /* <-- AÑADE ESTA LÍNEA AQUÍ */
-@import 'sections/_how-it-works.css';
-/* ... el resto de los imports ... */
