@@ -1,34 +1,35 @@
 .hero-section {
   text-align: center;
-  padding: 97px 0 283px;
+  padding: 96px 0 128px; /* Espaciado vertical normalizado */
 }
 
 .hero-title {
   color: var(--color-text-primary);
-  font-size: 75px;
+  font-size: 60px; /* Tamaño de H1 reducido drásticamente */
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 11px;
+  margin-bottom: 16px;
 }
 
 .hero-subtitle {
   color: var(--color-text-accent);
-  font-size: 45px;
-  font-weight: 500;
-  line-height: 1.2;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-bottom: 53px;
+  font-size: 24px; /* Subtítulo mucho más pequeño para mayor contraste */
+  font-weight: 400; /* Peso reducido para no competir con el H1 */
+  line-height: 1.5;
+  text-shadow: none; /* Quitamos sombra para mayor legibilidad */
+  margin: 0 auto 48px;
+  max-width: 650px; /* Limitamos el ancho del subtítulo */
 }
 
 .hero-cta {
-  margin-bottom: 55px;
+  margin-bottom: 48px;
 }
 
 .integrations-pills {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 16px; /* Espacio entre pills reducido */
   flex-wrap: wrap;
 }
 
@@ -36,25 +37,25 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid #f9fafb;
+  border: 1px solid #4A4A4A; /* Borde más sutil */
   border-radius: 40px;
-  padding: 10px;
-  font-size: 17px;
+  padding: 8px 16px; /* Padding reducido */
+  font-size: 14px; /* Tamaño de fuente reducido */
   font-weight: 500;
 }
 
 @media (max-width: 768px) {
   .hero-section {
-      padding: 60px 0 150px;
+      padding: 64px 0;
   }
   .hero-title {
-      font-size: 48px;
+      font-size: 42px;
   }
   .hero-subtitle {
-      font-size: 28px;
+      font-size: 18px;
   }
   .integrations-pills {
-      flex-direction: column;
-      gap: 15px;
+      flex-direction: row; /* Mantenemos en fila si caben */
+      gap: 12px;
   }
 }
