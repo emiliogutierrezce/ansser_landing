@@ -1,3 +1,4 @@
+/* Estilos para el cuerpo del documento */
 body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
@@ -6,6 +7,7 @@ body {
   line-height: 1.6;
 }
 
+/* Contenedor principal centrado */
 .container {
   width: 100%;
   max-width: 1280px;
@@ -15,34 +17,43 @@ body {
   padding-right: 32px;
 }
 
+/* Título genérico para las secciones */
 .section-title {
-    color: var(--color-text-accent);
-    font-size: 38px !important; /* <-- CAMBIO DEFINITIVO AQUÍ */
-    font-weight: 500;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: var(--color-text-accent);
+  font-size: 36px !important; /* Mantenemos el !important por ahora para asegurar que funcione */
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+/* Botón de acción principal (CTA) */
 .cta-button {
-  /* ... (estilos existentes) ... */
-  transition: all 0.3s ease; /* Cambiamos a 'all' para transicionar transform */
-  box-shadow: 0 0 15px rgba(140, 82, 255, 0); /* Sombra inicial transparente */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 28px;
+  border-radius: 12px;
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: none;
 }
 
 .cta-button:hover {
   background-color: var(--color-primary-dark);
-  transform: translateY(-3px) scale(1.03); /* Se levanta y crece un poco */
-  box-shadow: 0 0 25px rgba(140, 82, 255, 0.5); /* Sombra brillante al hacer hover */
 }
 
-
-/* Media Queries Globales */
+/* Media Query para pantallas más pequeñas */
 @media (max-width: 768px) {
-    .container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .section-title {
-        font-size: 28px !important; /* <-- CAMBIO DEFINITIVO AQUÍ */
-    }
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .section-title {
+    font-size: 28px !important;
+  }
 }
