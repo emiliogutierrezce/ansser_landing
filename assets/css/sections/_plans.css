@@ -1,67 +1,68 @@
 .plans-section {
-  padding-bottom: 158px;
+  padding-bottom: 96px; /* Espaciado normalizado */
 }
 
 .plans-container {
   display: flex;
   justify-content: center;
-  gap: 62px;
-  align-items: flex-start; /* Alinea las tarjetas en la parte superior */
+  gap: 32px; /* Espacio reducido */
+  align-items: flex-start;
 }
 
 .plan-card {
   background-color: var(--color-surface-dark);
   border: 1px solid var(--color-border);
-  border-radius: 15px;
-  padding: 35px;
+  border-radius: 16px; /* Borde más pronunciado */
+  padding: 32px;
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 360px; /* Ancho ajustado */
 }
 
 .plan-card.pro {
   border-color: var(--color-primary-dark);
+  transform: scale(1.05); /* Hacemos que el plan pro resalte más */
 }
 
 .plan-title {
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 20px; /* Título más grande */
+  font-weight: 500;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 }
 
 .plan-price {
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 500;
   text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 32px;
 }
 
 .price-amount {
-  font-size: 30px;
+  font-size: 42px; /* Tamaño de precio ajustado */
+  font-weight: 700;
 }
 
 .plan-features {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px; /* Espacio entre features reducido */
   width: 100%;
-  margin-bottom: 35px;
+  margin-bottom: 32px;
 }
 
 .plan-features li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: 17px;
+  gap: 12px;
+  font-size: 16px;
   font-weight: 400;
 }
 
 .plan-features li img {
-  width: 25px;
-  height: 25px;
+  width: 20px; /* Iconos de check más pequeños */
+  height: 20px;
   flex-shrink: 0;
-  margin-top: -2px; /* Ajuste visual fino */
 }
 
 .feature-bold {
@@ -72,14 +73,12 @@
   background-color: #1a1a1a;
   border: 1px solid var(--color-border);
   border-radius: 10px;
-  padding: 10px 15px;
+  padding: 12px 24px; /* Padding ajustado */
   width: 100%;
-  max-width: 250px;
   text-align: center;
-  font-size: 17px;
-  font-weight: 400;
-  margin-top: auto; /* Empuja el botón hacia abajo */
-  align-self: center;
+  font-size: 16px; /* Tamaño de fuente ajustado */
+  font-weight: 500;
+  margin-top: auto;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -97,15 +96,17 @@
   border-color: var(--color-primary);
 }
 
-
 @media (max-width: 1300px) {
   .plans-container {
       flex-direction: column;
       align-items: center;
-      gap: 40px;
+      gap: 32px;
   }
   .plan-card {
       width: 100%;
       max-width: 450px;
+  }
+  .plan-card.pro {
+    transform: scale(1); /* Quitamos el efecto de escala en móvil */
   }
 }
