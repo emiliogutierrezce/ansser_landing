@@ -1,6 +1,6 @@
 .site-footer {
   background-color: var(--color-surface-dark);
-  padding: 37px 0;
+  padding: 64px 0; /* Aumentamos un poco el padding para más aire */
 }
 
 .footer-container {
@@ -16,36 +16,41 @@
 }
 
 .footer-col:first-child {
-  max-width: 410px;
+  max-width: 320px; /* Ancho ajustado */
+}
+
+.footer-logo img {
+  width: 120px; /* <-- Corregido */
+  height: auto;
 }
 
 .footer-desc {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.4;
+  font-size: 16px; /* Ajustado al nuevo tamaño base */
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .copyright {
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   margin-top: 20px;
 }
 
 .footer-col h4 {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .footer-col ul {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 16px; /* Espacio entre links ajustado */
 }
 
 .footer-col ul a {
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 @media (max-width: 1024px) {
