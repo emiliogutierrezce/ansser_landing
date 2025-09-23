@@ -29,8 +29,8 @@ input, button, textarea, select { font: inherit; }
 /* Contenido de: base/_global.css */
 body { background-color: var(--color-background); color: var(--color-text-primary); font-family: var(--font-main); font-size: 16px; line-height: 1.6; }
 .container { width: 100%; max-width: 1280px; margin-left: auto; margin-right: auto; padding-left: 32px; padding-right: 32px; }
-.section-title { color: var(--color-text-accent); font-size: 38px !important; font-weight: 500; text-align: center; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
-.cta-button { display: inline-flex; justify-content: center; align-items: center; padding: 14px 28px; border-radius: 12px; background-color: var(--color-primary); color: var(--color-text-primary); font-size: 18px; font-weight: 500; line-height: 1.2; transition: background-color 0.3s ease; cursor: pointer; border: none; }
+.section-title { color: var(--color-text-accent); font-size: 36px !important; /* <-- H2 REDUCIDO */ font-weight: 500; text-align: center; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+.cta-button { display: inline-flex; justify-content: center; align-items: center; padding: 14px 28px; border-radius: 12px; background-color: var(--color-primary); color: var(--color-text-primary); font-size: 16px; /* <-- Botón ajustado a 16px */ font-weight: 500; line-height: 1.2; transition: background-color 0.3s ease; cursor: pointer; border: none; }
 .cta-button:hover { background-color: var(--color-primary-dark); }
 @media (max-width: 768px) {
     .container { padding-left: 20px; padding-right: 20px; }
@@ -45,17 +45,17 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 .main-nav a { font-size: 16px; font-weight: 500; }
 .auth-links { display: flex; align-items: center; gap: 24px; }
 .auth-links a { font-size: 16px; font-weight: 500; }
-.register-btn { background-color: var(--color-primary-light); padding: 8px 20px; border-radius: 40px; }
+.register-btn { background-color: var(--color-primary-light); padding: 8px 20px; border-radius: 40px; font-size: 16px; }
 @media (max-width: 768px) { .header-container { flex-direction: column; gap: 15px; } .main-nav { gap: 20px; } }
 
 /* Contenido de: sections/_hero.css */
 .hero-section { text-align: center; padding: 96px 0 128px; }
-.hero-title { color: var(--color-text-primary); font-size: 60px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
-.hero-subtitle { color: var(--color-text-accent); font-size: 24px; font-weight: 400; line-height: 1.5; text-shadow: none; margin: 0 auto 48px; max-width: 650px; }
+.hero-title { color: var(--color-text-primary); font-size: 52px; /* <-- H1 REDUCIDO */ font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+.hero-subtitle { color: var(--color-text-accent); font-size: 20px; /* <-- Subtítulo reducido */ font-weight: 400; line-height: 1.5; text-shadow: none; margin: 0 auto 48px; max-width: 650px; }
 .hero-cta { margin-bottom: 48px; }
 .integrations-pills { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; }
 .pill { display: flex; align-items: center; gap: 10px; border: 1px solid #4A4A4A; border-radius: 40px; padding: 8px 16px; font-size: 14px; font-weight: 500; }
-@media (max-width: 768px) { .hero-section { padding: 64px 0; } .hero-title { font-size: 42px; } .hero-subtitle { font-size: 18px; } .integrations-pills { flex-direction: row; gap: 12px; } }
+@media (max-width: 768px) { .hero-section { padding: 64px 0; } .hero-title { font-size: 40px; } .hero-subtitle { font-size: 18px; } .integrations-pills { flex-direction: row; gap: 12px; } }
 
 /* Contenido de: sections/_problem.css */
 .problem-section { padding-bottom: 96px; }
@@ -71,13 +71,13 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 /* Contenido de: sections/_solution.css */
 .solution-section { padding-bottom: 96px; }
 .solution-title-wrapper { border: 1px solid var(--color-text-primary); border-radius: 40px; padding: 12px 24px; margin: 0 auto 64px; width: fit-content; }
-.solution-title { color: var(--color-text-secondary); font-size: 32px !important; /* <--- ÚNICO CAMBIO AQUÍ: Reducido de 38px a 32px */ font-weight: 500; text-align: center; }
+.solution-title { color: var(--color-text-secondary); font-size: 36px !important; /* <-- H2 REDUCIDO */ font-weight: 500; text-align: center; }
 .solution-cards { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
 .solution-card { background-color: var(--color-surface-dark); border-radius: 12px; padding: 32px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 280px; text-align: center; }
 .solution-card img { width: 56px; height: 56px; margin-bottom: 16px; }
 .solution-card h3 { font-size: 20px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 8px; }
 .solution-card p { font-size: 16px; font-weight: 400; color: var(--color-text-primary); max-width: 240px; }
-@media (max-width: 768px) { .solution-title { font-size: 24px !important; /* <-- CAMBIO CORRESPONDIENTE PARA MÓVIL */ } .solution-title-wrapper { padding: 10px 20px; margin-bottom: 48px; } }
+@media (max-width: 768px) { .solution-title { font-size: 28px !important; } .solution-title-wrapper { padding: 10px 20px; margin-bottom: 48px; } }
 
 /* Contenido de: sections/_features.css */
 .features-section { padding: 100px 0; text-align: center; }
@@ -132,7 +132,7 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 .faq-section { padding-bottom: 96px; }
 .faq-main-title { margin-bottom: 58px; }
 .faq-list { max-width: 1002px; margin-left: auto; margin-right: auto; }
-.faq-item summary { display: flex; justify-content: space-between; align-items: center; padding: 15px 10px; font-size: 17px; font-weight: 500; cursor: pointer; list-style: none; }
+.faq-item summary { display: flex; justify-content: space-between; align-items: center; padding: 15px 10px; font-size: 16px; /* <-- Texto de pregunta ajustado */ font-weight: 500; cursor: pointer; list-style: none; }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-arrow { width: 30px; height: 30px; transition: transform 0.3s ease; }
 .faq-item[open] .faq-arrow { transform: rotate(180deg); }
@@ -141,6 +141,9 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 
 /* Contenido de: sections/_cta.css */
 .cta-section { text-align: center; padding: 128px 0; }
+.cta-section .hero-title { font-size: 42px; } /* <-- Título del CTA final ajustado */
+.cta-section .hero-subtitle { font-size: 20px; } /* <-- Subtítulo del CTA final ajustado */
+
 
 /* Contenido de: sections/_footer.css */
 .site-footer { background-color: var(--color-surface-dark); padding: 64px 0; }
