@@ -1,5 +1,5 @@
 .site-header {
-  padding-top: 30px;
+  padding-top: 24px; /* Espacio superior reducido */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -12,40 +12,40 @@
   align-items: center;
   background-color: rgba(242, 243, 247, 0.2);
   border-radius: 40px;
-  padding: 15px 27px;
+  padding: 12px 24px; /* Padding interno reducido */
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .logo img {
-  width: 136px;
-  height: 30px;
+  width: 120px; /* Logo ligeramente más pequeño */
+  height: auto;
 }
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 32px;
 }
 
 .main-nav a {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .auth-links {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 24px;
 }
 
 .auth-links a {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .register-btn {
   background-color: var(--color-primary-light);
-  padding: 6px 24px;
+  padding: 8px 20px; /* Padding ajustado */
   border-radius: 40px;
 }
 
