@@ -170,44 +170,43 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 }
 
 /* Contenido de: sections/_problem.css */
+/* Contenido de: sections/_problem.css */
 .problem-section {
   padding-bottom: 96px;
   padding-top: 64px;
   position: relative;
   overflow: hidden;
-  background-image: /* Fondo con patrones más techy y estrellas sutiles */
-    url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10 0L0 10V0h10zm10 0L0 20V0h20zm10 0L0 30V0h30zm10 0L0 40V0h40zm10 0L0 50V0h50zm10 0L0 60V0h60zm10 0L0 70V0h70zm10 0L0 80V0h80zm10 0L0 90V0h90zm10 0L0 100V0h100z" fill="%23FFFFFF" fill-opacity="0.01" /%3E%3C/svg%3E'), /* Patrón de rejilla muy sutil */
-    radial-gradient(ellipse at 10% 15%, rgba(139, 92, 246, 0.2) 0%, transparent 60%),
-    radial-gradient(ellipse at 90% 90%, rgba(124, 58, 237, 0.15) 0%, transparent 60%);
-  background-size: 20px 20px, cover, cover; /* Tamaño de la rejilla */
-  background-attachment: fixed; /* Hace que el fondo se quede mientras scrolleas */
-}
+  background-image: /* Fondo de rejilla muy sutil */
+    url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23FFFFFF" fill-opacity="0.05" fill-rule="evenodd"%3E%3Cpath d="M0 40V0h.5v40H0zm.5 0h40v-.5H.5V40z"/%3E%3C/g%3E%3C/svg%3E');
+  background-size: 40px 40px;
 }
 .problem-title {
   color: var(--color-text-secondary);
   margin-bottom: 64px;
-  font-size: 32px !important; /* Título más pequeño */
+  font-size: 32px !important;
 }
+.problem-cards { display: flex; justify-content: center; gap: 48px; }
 .problem-card {
   display: flex;
   flex-direction: column;
   gap: 12px;
   max-width: 320px;
-  text-align: center;
-  background-color: var(--color-glass-background); /* Fondo glass */
-  border: 1px solid var(--color-glass-border);     /* Borde glass */
+  text-align: left; /* Alineación a la izquierda, más profesional */
+  background-color: var(--color-glass-background);
+  border: 1px solid var(--color-glass-border);
   border-radius: 12px;
   padding: 30px;
-  backdrop-filter: blur(var(--backdrop-blur-value)); /* Efecto glass real */
-  transition: transform 0.3s ease;
+  backdrop-filter: blur(var(--backdrop-blur-value));
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .problem-card:hover {
   transform: translateY(-5px);
+  background-color: rgba(26, 26, 26, 0.7);
 }
+.card-header { justify-content: flex-start; } /* Alineación a la izquierda */
 .card-header img { width: 24px; height: 24px; }
 .card-header h3 { font-size: 20px; font-weight: 500; color: var(--color-text-secondary); }
 .problem-card p { font-size: 16px; font-weight: 400; color: var(--color-text-primary); padding-left: 0; }
-@media (max-width: 1024px) { .problem-cards { flex-direction: column; align-items: center; gap: 48px; } }
 @media (max-width: 1024px) { .problem-cards { flex-direction: column; align-items: center; gap: 48px; } }
 
 /* Contenido de: sections/_solution.css */
@@ -215,23 +214,16 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   padding-bottom: 96px;
   position: relative;
   overflow: hidden;
-  background-image: /* Fondo con patrones más techy y estrellas sutiles */
-    url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10 0L0 10V0h10zm10 0L0 20V0h20zm10 0L0 30V0h30zm10 0L0 40V0h40zm10 0L0 50V0h50zm10 0L0 60V0h60zm10 0L0 70V0h70zm10 0L0 80V0h80zm10 0L0 90V0h90zm10 0L0 100V0h100z" fill="%23FFFFFF" fill-opacity="0.01" /%3E%3C/svg%3E'), /* Patrón de rejilla muy sutil */
-    radial-gradient(ellipse at 5% 95%, rgba(139, 92, 246, 0.2) 0%, transparent 60%),
-    radial-gradient(ellipse at 90% 10%, rgba(124, 58, 237, 0.15) 0%, transparent 60%);
-  background-size: 20px 20px, cover, cover; /* Tamaño de la rejilla */
-  background-attachment: fixed; /* Hace que el fondo se quede mientras scrolleas */
+  background-image: /* Fondo de rejilla muy sutil */
+    url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23FFFFFF" fill-opacity="0.05" fill-rule="evenodd"%3E%3Cpath d="M0 40V0h.5v40H0zm.5 0h40v-.5H.5V40z"/%3E%3C/g%3E%3C/svg%3E');
+  background-size: 40px 40px;
 }
-.solution-title {
-  color: var(--color-text-secondary);
-  font-size: 32px !important; /* Título más pequeño */
-  font-weight: 500;
-  text-align: center;
-}
+.solution-title-wrapper { border: 1px solid var(--color-text-primary); border-radius: 40px; padding: 12px 24px; margin: 0 auto 64px; width: fit-content; }
+.solution-title { color: var(--color-text-secondary); font-size: 32px !important; font-weight: 500; text-align: center; }
 .solution-cards { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
 .solution-card {
-  background-color: var(--color-glass-background); /* Fondo glass */
-  border: 1px solid var(--color-glass-border);     /* Borde glass */
+  background-color: var(--color-glass-background);
+  border: 1px solid var(--color-glass-border);
   border-radius: 12px;
   padding: 32px 24px;
   display: flex;
@@ -240,11 +232,12 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   gap: 12px;
   width: 280px;
   text-align: center;
-  backdrop-filter: blur(var(--backdrop-blur-value)); /* Efecto glass real */
-  transition: transform 0.3s ease;
+  backdrop-filter: blur(var(--backdrop-blur-value));
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .solution-card:hover {
   transform: translateY(-5px);
+  background-color: rgba(26, 26, 26, 0.7);
 }
 .solution-card img { width: 56px; height: 56px; margin-bottom: 16px; }
 .solution-card h3 { font-size: 20px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 8px; }
