@@ -722,3 +722,298 @@ body { background-color: var(--color-background); color: var(--color-text-primar
     align-items: center;
     gap: 12px;
 }
+
+/* --- ESTILOS PARA TARJETA DE COMPARACIÓN --- */
+.comparison-wrapper.centered {
+    margin: 64px auto 0;
+    width: 100%;
+    max-width: 900px; /* Aumentado para más espacio */
+}
+.comparison-card-inline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background-color: var(--color-border-dark);
+    border: 1px solid var(--color-border-dark);
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: left;
+}
+.competitor-side-inline, .ansser-side-inline {
+    padding: 32px;
+    background-color: #110d18;
+}
+.ansser-side-inline {
+    background-color: rgba(16, 10, 28, 0.7);
+    border-left: 1px solid var(--color-primary);
+}
+.comparison-card-inline h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+/* Estilos para la lista de competidores con logos */
+.competitor-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+}
+.competitor-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.logo-placeholder-inline {
+    height: 28px;
+    width: 28px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--color-text-secondary);
+    opacity: 0.6;
+    flex-shrink: 0;
+}
+.ansser-logo-in-comparison-inline {
+    height: 28px;
+    width: 28px;
+}
+
+/* Estilos para las listas de bullets */
+.feature-bullets {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+.feature-bullets li {
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.7);
+}
+.feature-bullets li::before {
+    content: '\2716'; /* X mark */
+    position: absolute;
+    left: 0;
+    color: #ff5555;
+    font-weight: bold;
+}
+.feature-bullets.ansser-bullets li {
+    color: var(--color-text-primary);
+}
+.feature-bullets.ansser-bullets li::before {
+    content: '\2714'; /* Check mark */
+    color: #55ff55;
+}
+
+@media (max-width: 768px) {
+    .comparison-card-inline { grid-template-columns: 1fr; }
+    .ansser-side-inline { border-left: none; border-top: 1px solid var(--color-primary); }
+}
+
+/* --- Animación para fondo de video --- */
+.video-container {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 96px;
+}
+
+.video-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse, rgba(140, 82, 255, 0.25), transparent 70%);
+  filter: blur(100px);
+  z-index: -1;
+  animation: pulse-glow 10s infinite alternate ease-in-out;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes pulse-glow {
+  from {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.7;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+
+/* Contenido de: sections/_testimonials.css (NUEVO) */
+.testimonials-section { padding: 96px 0; }
+.testimonials-section .section-title { margin-bottom: 64px; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.testimonial-card { 
+  background-color: rgba(16, 10, 28, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.testimonial-logo { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 24px; object-fit: cover; }
+.testimonial-quote { font-size: 16px; line-height: 1.6; margin-bottom: 24px; font-style: italic; color: var(--color-text-secondary); }
+.testimonial-author .author-name { font-weight: 700; }
+.testimonial-author .author-title { font-size: 14px; color: var(--color-text-accent); }
+@media (max-width: 1024px) { .testimonials-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+/* Estilos para placeholders de features (NUEVO) */
+.placeholder-feature { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: rgba(196, 181, 253, 0.05) !important;
+  border: 2px dashed var(--color-primary-light);
+}
+.placeholder-feature p { color: var(--color-text-accent); font-weight: 500; text-align: center; padding: 20px; }
+
+.hero-integrations-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- ESTILOS PARA TARJETA DE COMPARACIÓN --- */
+.comparison-wrapper {
+    margin-top: 64px;
+    width: 100%;
+}
+.comparison-card-inline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background-color: var(--color-border-dark);
+    border: 1px solid var(--color-border-dark);
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: left;
+}
+.competitor-side-inline, .ansser-side-inline {
+    padding: 32px;
+    background-color: #110d18;
+}
+.ansser-side-inline {
+    background-color: rgba(16, 10, 28, 0.7);
+    border-left: 1px solid var(--color-primary);
+}
+.comparison-card-inline h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.logo-placeholders-inline {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+    height: 40px;
+}
+.logo-placeholder-inline {
+    height: 40px;
+    padding: 0 16px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    opacity: 0.6;
+}
+.ansser-logo-in-comparison-inline {
+    height: 40px;
+    width: auto;
+}
+.comparison-card-inline p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+.competitor-side-inline p {
+    opacity: 0.7;
+}
+@media (max-width: 768px) {
+    .comparison-card-inline { grid-template-columns: 1fr; }
+    .ansser-side-inline { border-left: none; border-top: 1px solid var(--color-primary); }
+}
+
+/* --- ESTILOS PARA TARJETA DE COMPARACIÓN --- */
+.comparison-wrapper {
+    margin-top: 48px;
+    width: 100%;
+    max-width: 800px;
+}
+.comparison-card-inline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background-color: var(--color-border-dark);
+    border: 1px solid var(--color-border-dark);
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: left;
+}
+.competitor-side-inline, .ansser-side-inline {
+    padding: 24px;
+    background-color: #110d18;
+}
+.ansser-side-inline {
+    background-color: rgba(16, 10, 28, 0.7);
+    border-left: 1px solid var(--color-primary);
+}
+.comparison-card-inline h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.logo-placeholders-inline {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+    height: 32px;
+}
+.logo-placeholder-inline {
+    height: 32px;
+    padding: 0 12px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    opacity: 0.6;
+}
+.ansser-logo-in-comparison-inline {
+    height: 32px;
+    width: auto;
+}
+.comparison-card-inline p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+.competitor-side-inline p {
+    opacity: 0.7;
+}
+@media (max-width: 768px) {
+    .comparison-card-inline { grid-template-columns: 1fr; }
+    .ansser-side-inline { border-left: none; border-top: 1px solid var(--color-primary); }
+}
