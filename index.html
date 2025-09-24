@@ -17,8 +17,7 @@
 <body>
 
     <header class="site-header">
-        <div class="header-container">
-            <div class="container header-content">
+        <div class="container header-container">
             <a href="#" class="logo">
                 <img src="assets/images/full_logo.svg" alt="Logotipo de Ansser">
             </a>
@@ -30,7 +29,6 @@
             <div class="auth-links">
                 <a href="#">Inicia Sesión</a>
                 <a href="#" class="register-btn">Regístrate</a>
-            </div>
             </div>
         </div>
     </header>
@@ -116,48 +114,61 @@
             <div class="container">
                 <img src="assets/images/icon_logo.svg" alt="Icono del logo de Ansser" class="features-icon">
                 <div class="features-grid">
-                    <div class="feature-item large"></div>
-                    <div class="feature-item small"></div>
-                    <div class="feature-item small"></div>
-                    <div class="feature-item large"></div>
-                    <div class="feature-item full-width"></div>
+                    <div class="feature-item large">
+                        <img src="https://via.placeholder.com/700x356.png/0A0A0A/8B5CF6?text=Feature+Image+1" alt="Placeholder for feature 1" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="feature-item small">
+                        <img src="https://via.placeholder.com/500x356.png/0A0A0A/8B5CF6?text=Feature+Image+2" alt="Placeholder for feature 2" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="feature-item small">
+                        <img src="https://via.placeholder.com/500x356.png/0A0A0A/8B5CF6?text=Feature+Image+3" alt="Placeholder for feature 3" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="feature-item large">
+                        <img src="https://via.placeholder.com/700x356.png/0A0A0A/8B5CF6?text=Feature+Image+4" alt="Placeholder for feature 4" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="feature-item full-width">
+                        <img src="https://via.placeholder.com/1200x218.png/0A0A0A/8B5CF6?text=Feature+Image+5" alt="Placeholder for feature 5" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
                 </div>
-                <a href="#" class="video-demo-link">
-                    <span>video demo</span>
-                    <img src="assets/images/arrow-up-right.svg" alt="Flecha hacia arriba a la derecha">
-                </a>
+            </div>
+        </section>
+
+        <section id="video-section" class="video-section" style="text-align: center; padding: 50px 0;">
+            <div class="container">
+                <h2 class="section-title" style="margin-bottom: 40px;">¿Como funciona?</h2>
+                <video controls style="width: 100%; max-width: 800px; border-radius: 15px; border: 1px solid var(--color-primary-light); box-shadow: 0 0 20px rgba(140, 82, 255, 0.3); margin: 0 auto; display: block;">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </section>
 
         <section id="how-it-works" class="how-it-works-section">
             <div class="container">
-                <div class="steps-container">
-                    <div class="step">
-                        <div class="step-number">
-                            <img src="assets/images/step-bg.svg" alt="Fondo decorativo para número 1">
-                            <span>1</span>
-                        </div>
-                        <div class="step-content">
+                <div class="steps-wrapper">
+                    <div class="step-item step-1">
+                        <div class="step-number-clean">1</div>
+                        <div class="step-text">
                             <h4>Introduce los datos de tu negocio</h4>
                             <p>Registra productos, sus características, contenido audiovisual y todo lo que quieras que el chatbot sepa acerca de tu negocio y lo que vendes.</p>
                         </div>
                     </div>
-                    <div class="step">
-                        <div class="step-number">
-                            <img src="assets/images/step-bg.svg" alt="Fondo decorativo para número 2">
-                            <span>2</span>
-                        </div>
-                        <div class="step-content">
+                    <div class="step-connector-wrapper">
+                        <div class="step-connector connector-1"></div>
+                    </div>
+                    <div class="step-item step-2">
+                        <div class="step-number-clean">2</div>
+                        <div class="step-text">
                             <h4>Crea tus chatbots</h4>
                             <p>Diseña chatbots a tu medida, define el comportamiento, estilo, reglas y preguntas frecuentes que quieres que conteste el bot.</p>
                         </div>
                     </div>
-                    <div class="step">
-                        <div class="step-number">
-                            <img src="assets/images/step-bg.svg" alt="Fondo decorativo para número 3">
-                            <span>3</span>
-                        </div>
-                        <div class="step-content">
+                    <div class="step-connector-wrapper">
+                        <div class="step-connector connector-2"></div>
+                    </div>
+                    <div class="step-item step-3">
+                        <div class="step-number-clean">3</div>
+                        <div class="step-text">
                             <h4>Conecta ansser</h4>
                             <p>Conecta ansser con WhatsApp, Messenger y Meta Pixel, para que esté presente en todos tus canales de venta.</p>
                         </div>

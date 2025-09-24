@@ -1,4 +1,3 @@
-
 // Espera a que todo el contenido de la página se cargue
 document.addEventListener('DOMContentLoaded', function() {
 const sections = document.querySelectorAll('main section[id]');
@@ -50,4 +49,83 @@ sections.forEach(section => {
   // Escucha el evento de scroll en la ventana
   window.addEventListener('scroll', handleScroll);
 
+  const solutionCards = document.querySelectorAll('.solution-card');
+
+  solutionCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -10; // -10 to 10 degrees
+      const rotateY = ((x - centerX) / centerX) * 10; // -10 to 10 degrees
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+    });
+  });
+
+  const stepsWrapper = document.querySelector('.steps-wrapper');
+
+  const stepObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        stepsWrapper.classList.add('is-animated');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  if (stepsWrapper) {
+    stepObserver.observe(stepsWrapper);
+  }
+
+  const statsSection = document.querySelector('.stats-section');
+  const statNumbers = document.querySelectorAll('.stat-number');
+
+  const animateStat = (element) => {
+    const finalValue = element.innerText;
+    const match = finalValue.match(/(\+?)(\d+)(.*)/);
+    if (!match) return;
+
+    const prefix = match[1] || '';
+    const number = parseInt(match[2], 10);
+    const suffix = match[3] || '';
+    
+    let current = 0;
+    const increment = number / 100; // Animate over 100 steps
+    const duration = 2000; // 2 seconds
+    const stepTime = duration / 100;
+
+    element.innerText = prefix + current + suffix;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= number) {
+        clearInterval(timer);
+        element.innerText = finalValue;
+      } else {
+        element.innerText = prefix + Math.ceil(current) + suffix;
+      }
+    }, stepTime);
+  };
+
+  const statObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        statNumbers.forEach(animateStat);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  if (statsSection) {
+    statObserver.observe(statsSection);
+  }
 });
