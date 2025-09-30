@@ -1,5 +1,6 @@
 .how-it-works-section {
   padding-bottom: 147px;
+  background: radial-gradient(ellipse at bottom, rgba(140, 82, 255, 0.1), transparent 70%);
 }
 
 .steps-container {
@@ -60,6 +61,11 @@
   font-weight: 500;
   color: var(--color-text-secondary);
   line-height: 1.4;
+}
+
+.video-container {
+    position: relative;
+    margin-bottom: 80px; /* Espacio entre el video y los pasos */
 }
 
 @media (max-width: 768px) {

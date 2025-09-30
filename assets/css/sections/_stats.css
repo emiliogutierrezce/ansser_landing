@@ -1,5 +1,7 @@
 .stats-section {
-  padding-bottom: 202px;
+  margin-top: -50px;
+  padding: 0 0 200px;
+  background: radial-gradient(ellipse at top, rgba(140, 82, 255, 0.1), transparent 70%);
 }
 
 .stats-grid {
