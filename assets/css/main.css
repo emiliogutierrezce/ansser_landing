@@ -110,7 +110,39 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 .auth-links { display: flex; align-items: center; gap: 24px; }
 .auth-links a { font-size: 14px; font-weight: 500; }
 .register-btn { background-color: var(--color-primary-light); padding: 6px 16px; border-radius: 40px; font-size: 14px; }
-@media (max-width: 768px) { .header-container { flex-direction: column; gap: 15px; } .main-nav { gap: 20px; } }
+
+.hamburger-menu { display: none; }
+.mobile-nav-container { display: none; }
+
+@media (max-width: 768px) { 
+    .main-nav, .auth-links { display: none; }
+    .hamburger-menu { display: block; cursor: pointer; background: none; border: none; padding: 0; z-index: 1001;}
+    .hamburger-menu span { display: block; width: 25px; height: 3px; background-color: var(--color-text-primary); margin: 5px 0; transition: all 0.3s ease-in-out; }
+
+    .mobile-nav-container.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-background);
+        z-index: 1000;
+    }
+    .mobile-nav-container.active .main-nav-mobile, .mobile-nav-container.active .auth-links-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .mobile-nav-container.active .main-nav-mobile a, .mobile-nav-container.active .auth-links-mobile a {
+        font-size: 24px;
+    }
+}
+
 
 /* Contenido de: sections/_hero.css (MODIFICADO) */
 .hero-section {
@@ -304,6 +336,14 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   box-shadow: 0 0 20px rgba(140, 82, 255, 0.3);
   transition: transform 0.1s ease;
 }
+
+@media (max-width: 600px) {
+  .solution-card { 
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
 .solution-card img {
   width: 56px;
   height: 56px;
@@ -478,10 +518,13 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   .steps-wrapper {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
   }
   .timeline-connector {
-      display: none; /* Hide connectors on mobile */
+      display: block; 
+      width: 2px;
+      height: 50px;
+      margin: 0 auto;
   }
 }
 
@@ -718,6 +761,13 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   padding: 64px;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .cta-section .container {
+    padding: 48px 24px;
+  }
+}
+
 
 .cta-section .hero-title {
   font-size: 48px;
