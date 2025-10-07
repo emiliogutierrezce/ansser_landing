@@ -136,11 +136,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   hamburgerMenu.addEventListener('click', () => {
     mobileNavContainer.classList.toggle('active');
+    hamburgerMenu.classList.toggle('active');
   });
 
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {
       mobileNavContainer.classList.remove('active');
+      hamburgerMenu.classList.remove('active');
     });
   });
 });

@@ -16,7 +16,8 @@
   padding: 32px;
   display: flex;
   flex-direction: column;
-  width: 360px; /* Ancho ajustado */
+  max-width: 360px; /* Ancho ajustado */
+  width: 100%;
 }
 
 .plan-card.pro {
