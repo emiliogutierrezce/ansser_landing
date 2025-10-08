@@ -211,7 +211,7 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 @media (min-width: 769px) { 
     .site-header { 
         position: sticky;
-        top: 8px;
+        top: 16px;
         padding-top: 8px;
         background-color: transparent;
         transition: top 0.3s ease-in-out;
