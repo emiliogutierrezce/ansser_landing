@@ -1026,17 +1026,27 @@ body { background-color: var(--color-background); color: var(--color-text-primar
     align-items: center;
 }
 .competitor-circle .feature-bullets li::before {
-    content: '\2716'; /* X mark */
-    color: #ff5555;
-    font-weight: bold;
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
     margin-right: 8px;
+    background-image: url('../images/cross-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .ansser-circle .feature-bullets li::before {
-    content: '\2714'; /* Check mark */
-    color: #55ff55;
-    font-weight: bold;
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
     margin-right: 8px;
+    background-image: url('../images/check-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .ansser-bullets li {
@@ -1325,10 +1335,7 @@ body { background-color: var(--color-background); color: var(--color-text-primar
 
 
 
-.feature-bullets.ansser-bullets li::before {
-    content: '\2714'; /* Check mark */
-    color: #55ff55;
-}
+
 
 @media (max-width: 850px) {
     .circle-comparison-container {
