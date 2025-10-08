@@ -114,12 +114,31 @@
 }
 
 /* Media query para responsividad */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .main-nav {
-    gap: 20px;
-  }
+@media (max-width: 991px) {
+    .main-nav,
+    .auth-links {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .site-header {
+        top: 0;
+        position: static;
+        background-color: #08020e; /* Fondo oscuro para el header en mobile */
+    }
+
+    .header-container {
+        background-color: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 16px 24px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
