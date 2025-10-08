@@ -2,6 +2,16 @@
    DEBUG STYLESHEET - ARCHIVO CONSOLIDADO
    ==================================================== */
 
+html {
+  scroll-behavior: smooth;
+}
+
+#how-it-works,
+#plans,
+#faq {
+  scroll-margin-top: 100px;
+}
+
 html,
 body {
 }
@@ -76,8 +86,8 @@ body { background-color: var(--color-background); color: var(--color-text-primar
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
-  border-radius: 12px;
+  padding: 8px 16px;
+  border-radius: 40px;
   background-color: var(--color-primary);
   color: var(--color-text-primary);
   font-size: 16px;
@@ -217,7 +227,6 @@ body { background-color: var(--color-background); color: var(--color-text-primar
         transition: top 0.3s ease-in-out;
     }
     .site-header.scrolled {
-        top: 0;
     }
     .header-container {
         background-color: rgba(16, 10, 28, 0.5);
@@ -250,7 +259,7 @@ body { background-color: var(--color-background); color: var(--color-text-primar
         font-weight: 500;
     }
     .auth-links .register-btn {
-        padding: 10px 22px;
+        padding: 8px 20px;
     }
     .hamburger-menu { display: none; }
 }
